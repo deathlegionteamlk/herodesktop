@@ -1,27 +1,33 @@
-# HeroDesktop 🦸‍♂️
+# HeroDesktop 🦸‍♂️ - The Ultimate Virtual Desktop Sandbox for AI Agents
 
-Built by **Death Legion Team**. The best and most feature-complete open-source virtual desktop sandbox for AI agents.
+[![GitHub](https://img.shields.io/github/license/deathlegionteamlk/herodesktop)](https://github.com/deathlegionteamlk/herodesktop)
+[![PyPI](https://img.shields.io/pypi/v/herodesktop)](https://pypi.org/project/herodesktop/)
+[![npm](https://img.shields.io/npm/v/herodesktop)](https://www.npmjs.com/package/herodesktop)
 
-HeroDesktop allows you to safely run AI agents in an isolated environment with a full desktop interface. Powered by E2B, it provides seamless control and streaming capabilities.
+Built by **Death Legion Team**. HeroDesktop is the premier open-source **virtual desktop sandbox** specifically engineered for **AI agents** and **AI computer use**. It provides a secure, isolated, and streamable environment where autonomous agents can interact with real desktop applications just like a human.
 
-## Features
+## Why HeroDesktop?
 
-- 🚀 **On-Demand Desktops**: Start a fresh desktop sandbox in seconds.
-- 📦 **Common Apps**: Built-in support for Chrome, Firefox, and VS Code.
-- 📺 **Live Streaming**: Stream the entire desktop or a specific application window.
-- 🔐 **Security**: Optional password protection and view-only modes for streams.
-- ⌨️ **Full Control**: Mouse movement, clicks, dragging, scrolling, typing, and hotkeys.
-- 🖥️ **Window Management**: Detect and interact with specific application windows.
-- 🐍 **Multi-Language**: Native SDKs for both Python and JavaScript.
+HeroDesktop solves the "Computer Use" challenge for AI agents by providing a robust infrastructure powered by **E2B**. Whether you are building an agent to automate browser tasks, manage cloud infrastructure, or perform complex desktop workflows, HeroDesktop offers the most feature-complete **isolated desktop environment**.
+
+## Key Features
+
+- 🚀 **On-Demand Desktops**: Instantly spin up a fresh Linux desktop sandbox.
+- 📦 **Pre-installed Apps**: Native support for **Google Chrome**, **Firefox**, and **VS Code**.
+- 📺 **VNC Live Streaming**: High-performance streaming of the entire desktop or specific app windows.
+- 🔐 **Secure Access**: Integrated password protection and **view-only mode** for safe sharing.
+- ⌨️ **Advanced Computer Control**: Precise mouse movement, drag-and-drop, scrolling, and keyboard automation.
+- 🖥️ **Window Detection**: Automatically detect and focus on specific application windows.
+- 🐍 **Universal SDK**: Simple and consistent SDKs for both **Python** and **JavaScript/TypeScript**.
 
 ## Installation
 
-### Python
+### Python SDK
 ```bash
 pip install herodesktop
 ```
 
-### JavaScript/TypeScript
+### JavaScript/TypeScript SDK
 ```bash
 npm install herodesktop
 ```
@@ -31,20 +37,21 @@ npm install herodesktop
 ```python
 from herodesktop import HeroDesktop
 
-# Create a new sandbox
+# Initialize the virtual desktop sandbox
 desktop = HeroDesktop.create()
 
-# Launch an app
-desktop.launch_chrome("https://google.com")
+# Launch a browser for AI computer use
+desktop.launch_chrome("https://e2b.dev")
 
-# Start streaming
+# Get a streamable browser URL to watch the agent
 url = desktop.start_streaming()
-print(f"Stream URL: {url}")
+print(f"Watch live: {url}")
 
-# Basic control
-desktop.write("Hello World!")
+# Automate keyboard and mouse
+desktop.write("HeroDesktop is awesome!")
+desktop.press("enter")
 
-# Shutdown
+# Gracefully shutdown
 desktop.shutdown()
 ```
 
@@ -55,22 +62,37 @@ import { HeroDesktop } from 'herodesktop';
 
 const desktop = await HeroDesktop.create();
 
-await desktop.launchChrome("https://google.com");
+// Open VS Code in the sandbox
+await desktop.launchVSCode();
 
-const url = await desktop.startStreaming();
+// Stream a specific window only
+const windows = await desktop.getWindows('code');
+const url = await desktop.startStreaming({ windowId: windows[0] });
 console.log(`Stream URL: ${url}`);
-
-await desktop.write("Hello World!");
 
 await desktop.shutdown();
 ```
 
+## Use Cases
+
+*   **AI Agent Testing**: Safely test autonomous agents in an isolated sandbox.
+*   **Browser Automation**: High-level control over Chrome and Firefox.
+*   **Cloud IDE for Agents**: Give your agents access to VS Code in a secure environment.
+*   **Computer Use Benchmarking**: Evaluate AI models on desktop interaction tasks.
+
 ## Examples
 
-Check out the `examples/` directory for more detailed use cases:
-- `basic`: Simple sandbox creation and control.
-- `streaming_app`: Launching an app and streaming only that window.
+Explore more in the `examples/` folder:
+- `basic.py`: Simple mouse and keyboard control.
+- `streaming_app.ts`: Multi-window detection and targeted streaming.
+
+## Technical Details
+
+HeroDesktop uses **Xvfb** for headless display management and **x11vnc** with **noVNC** for streaming. It is built to be compatible with the latest E2B Desktop templates.
+
+## Keywords
+AI Agents, Virtual Desktop, Sandbox, Computer Use, E2B, Remote Desktop, AI Automation, Isolated Environment, Python SDK, JavaScript SDK, Chrome Automation, VS Code Sandbox.
 
 ## License
 
-MIT - HeroDesktop by Death Legion Team
+MIT © [Death Legion Team](https://github.com/deathlegionteamlk)
