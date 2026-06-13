@@ -4,20 +4,29 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "herodesktop"
-version = "0.1.0"
+version = "0.1.1"
 authors = [
   { name="Death Legion Team" },
 ]
-description = "HeroDesktop: Open source virtual desktop sandbox for AI agents by Death Legion Team."
+description = "HeroDesktop: The premier virtual desktop sandbox for AI agents and computer use automation."
 readme = "README.md"
 requires-python = ">=3.8"
 dependencies = [
     "e2b-desktop>=2.4.1",
+    "typing-extensions>=4.1.0",
+]
+keywords = [
+    "ai", "agents", "sandbox", "virtual-desktop", "computer-use", "e2b", 
+    "automation", "vnc", "streaming", "isolated-environment"
 ]
 classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development :: Libraries :: Python Modules",
 ]
 
 [tool.setuptools.packages.find]
