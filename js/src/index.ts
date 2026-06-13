@@ -1,12 +1,7 @@
-import { Sandbox } from '@e2b/desktop';
+import { Sandbox, SandboxOpts } from '@e2b/desktop';
 
-export interface HeroDesktopCreateOpts {
+export interface HeroDesktopCreateOpts extends SandboxOpts {
   template?: string;
-  resolution?: [number, number];
-  dpi?: number;
-  display?: string;
-  timeout?: number;
-  [key: string]: any;
 }
 
 export class HeroDesktop extends Sandbox {
@@ -15,23 +10,23 @@ export class HeroDesktop extends Sandbox {
    * A powerful virtual desktop sandbox for AI agents.
    */
 
-  static async create(opts: HeroDesktopCreateOpts = {}): Promise<HeroDesktop> {
-    const {
-      template = 'desktop',
-      resolution,
-      dpi,
-      display,
-      timeout,
-      ...rest
-    } = opts;
+  // Override create to provide a simpler API while remaining compatible
+  static async create(optsOrTemplate?: string | HeroDesktopCreateOpts, opts?: HeroDesktopCreateOpts): Promise<HeroDesktop> {
+    let template = 'desktop';
+    let options: HeroDesktopCreateOpts = {};
 
-    return await super.create(template, {
-      resolution,
-      dpi,
-      display,
-      timeout,
-      ...rest,
-    }) as HeroDesktop;
+    if (typeof optsOrTemplate === 'string') {
+      template = optsOrTemplate;
+      options = opts || {};
+    } else if (optsOrTemplate) {
+      options = optsOrTemplate;
+      if (options.template) {
+        template = options.template;
+      }
+    }
+
+    // @ts-ignore - E2B's create return type handling can be tricky with inheritance
+    return await super.create(template, options) as HeroDesktop;
   }
 
   async launchChrome(url?: string): Promise<void> {
@@ -78,6 +73,6 @@ export class HeroDesktop extends Sandbox {
   }
 
   async shutdown(): Promise<void> {
-    await this.close();
+    await this.kill();
   }
 }
