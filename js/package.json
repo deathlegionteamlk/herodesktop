@@ -1,7 +1,7 @@
 {
   "name": "herodesktop",
-  "version": "0.1.0",
-  "description": "HeroDesktop: Open source virtual desktop sandbox for AI agents by Death Legion Team.",
+  "version": "0.1.1",
+  "description": "HeroDesktop: The premier virtual desktop sandbox for AI agents and computer use automation.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -9,6 +9,18 @@
   },
   "author": "Death Legion Team",
   "license": "MIT",
+  "keywords": [
+    "ai",
+    "agents",
+    "sandbox",
+    "virtual-desktop",
+    "computer-use",
+    "e2b",
+    "automation",
+    "vnc",
+    "streaming",
+    "isolated-environment"
+  ],
   "dependencies": {
     "@e2b/desktop": "^2.3.1"
   },
