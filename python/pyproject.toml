@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "herodesktop"
+version = "0.1.0"
+authors = [
+  { name="Death Legion Team" },
+]
+description = "HeroDesktop: Open source virtual desktop sandbox for AI agents by Death Legion Team."
+readme = "../README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "e2b-desktop>=2.4.1",
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["herodesktop*"]
