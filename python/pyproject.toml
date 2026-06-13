@@ -9,7 +9,7 @@ authors = [
   { name="Death Legion Team" },
 ]
 description = "HeroDesktop: Open source virtual desktop sandbox for AI agents by Death Legion Team."
-readme = "../README.md"
+readme = "README.md"
 requires-python = ">=3.8"
 dependencies = [
     "e2b-desktop>=2.4.1",
