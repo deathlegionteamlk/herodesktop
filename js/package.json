@@ -1,0 +1,18 @@
+{
+  "name": "herodesktop",
+  "version": "0.1.0",
+  "description": "HeroDesktop: Open source virtual desktop sandbox for AI agents by Death Legion Team.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "author": "Death Legion Team",
+  "license": "MIT",
+  "dependencies": {
+    "@e2b/desktop": "^2.3.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
